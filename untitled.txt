@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سحر مرزوكة - تجربة صحراوية لا تُنسى</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@700&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('1000071597.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .arabic-title { font-family: 'Amiri', serif; }
+        
+        .language-dropdown:hover .dropdown-menu { display: block; }
+        
+        .gallery-card img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #fef3c7; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 5px; }
+
+        .mobile-nav-active {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 5rem;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-bold text-orange-700 arabic-title">مرزوكة إكسبيريانس</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div id="nav-links" class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="font-bold hover:text-orange-600 transition">الرئيسية</a>
+                    <a href="#activities" class="font-bold hover:text-orange-600 transition">الأنشطة</a>
+                    <a href="#gallery" class="font-bold hover:text-orange-600 transition">المعرض</a>
+                    <a href="#booking" class="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition shadow-lg">احجز الآن</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative language-dropdown group">
+                        <button class="flex items-center gap-1 border border-orange-200 px-3 py-1 rounded font-bold">
+                            <i class="fas fa-globe text-orange-600"></i>
+                            <span>اللغة</span>
+                        </button>
+                        <div class="dropdown-menu hidden absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-xl rounded-lg py-2">
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">العربية</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">English</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">Français</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">Español</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">中文 (Chinese)</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">한국어 (Korean)</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-orange-50">हिन्दी (Hindi)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="text-orange-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 arabic-title drop-shadow-lg">اكتشف سحر رمال مرزوكة الذهبية</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light drop-shadow-md">استمتع بأجمل غروب شمس في العالم وتجربة حياة البدو الأصيلة</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#booking" class="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-full text-lg font-bold transition shadow-xl">ابدأ رحلتك اليوم</a>
+                <a href="https://wa.me/212618126225" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full text-lg font-bold transition flex items-center gap-2 shadow-xl">
+                    <i class="fab fa-whatsapp text-2xl"></i> +212 618-126225
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="activities" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 text-center">
+            <div class="p-8 border border-orange-50 rounded-2xl hover:shadow-xl transition">
+                <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-campground text-3xl text-orange-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">مخيمات فاخرة</h3>
+                <p class="text-gray-600">نقدم لكم أفضل المخيمات التي تجمع بين الأصالة والراحة الحديثة تحت ضوء النجوم.</p>
+            </div>
+            <div class="p-8 border border-orange-50 rounded-2xl hover:shadow-xl transition">
+                <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-car text-3xl text-orange-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">رحلات 4x4</h3>
+                <p class="text-gray-600">استكشف الكثبان الرملية العالية في رحلات السفاري المثيرة والمنعشة للروح.</p>
+            </div>
+            <div class="p-8 border border-orange-50 rounded-2xl hover:shadow-xl transition">
+                <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-music text-3xl text-orange-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">موسيقى غناوة</h3>
+                <p class="text-gray-600">عش تجربة فنية فريدة مع أنغام غناوة التقليدية والرقصات الصحراوية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-orange-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-orange-800 arabic-title mb-4">معرض الصحراء</h2>
+                <div class="w-24 h-1 bg-orange-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- الصور مستخدمة من الملفات المرفوعة -->
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071601.jpg" alt="Dune" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">كثبان عرق الشبي</span>
+                    </div>
+                </div>
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071595.jpg" alt="Camel Ride" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">رحلات الجمال</span>
+                    </div>
+                </div>
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071617.jpg" alt="Music" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">ثقافة غناوة</span>
+                    </div>
+                </div>
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071607.jpg" alt="Restaurant" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">كهوف ومطاعم تقليدية</span>
+                    </div>
+                </div>
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071609.jpg" alt="Nature" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">واحات خضراء</span>
+                    </div>
+                </div>
+                <div class="gallery-card overflow-hidden rounded-3xl shadow-xl relative group h-80">
+                    <img src="1000071605.jpg" alt="Sunset" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-8">
+                        <span class="text-white font-bold text-xl">غروب الشمس المذهل</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-orange-50 rounded-[2.5rem] p-10 md:p-16 shadow-2xl border border-orange-100">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-orange-900 mb-4">احجز مغامرتك القادمة</h2>
+                    <p class="text-gray-600 text-lg">أرسل طلبك وسنرد عليك لتأكيد التفاصيل</p>
+                </div>
+                
+                <form onsubmit="handleBooking(event)" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-3">الاسم الكامل</label>
+                            <input type="text" required class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-orange-500 outline-none transition shadow-sm" placeholder="مثال: إسماعيل أوتالب">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-3">عدد الأشخاص</label>
+                            <input type="number" min="1" required class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-orange-500 outline-none transition shadow-sm" placeholder="مثال: 4">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-3">تاريخ الرحلة</label>
+                            <input type="date" id="booking-date" required class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-orange-500 outline-none transition shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-3">رقم الهاتف للاتصال</label>
+                            <input type="tel" required class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-orange-500 outline-none transition shadow-sm" placeholder="+212 6xx-xxxxxx">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-5">اختر الأنشطة (محددة تلقائياً):</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">ركوب الجمال</span>
+                            </label>
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">رحلات 4x4</span>
+                            </label>
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">تزلج رملي</span>
+                            </label>
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">مبيت صحراوي</span>
+                            </label>
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">موسيقى حية</span>
+                            </label>
+                            <label class="flex items-center space-x-3 space-x-reverse cursor-pointer p-3 bg-white rounded-xl border border-orange-100 hover:border-orange-300 transition shadow-sm">
+                                <input type="checkbox" checked class="w-5 h-5 text-orange-600 rounded">
+                                <span class="text-sm font-semibold">عشاء تقليدي</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white text-xl font-bold py-5 rounded-2xl shadow-xl transition transform hover:-translate-y-1 active:scale-95">
+                        إرسال طلب الحجز الآن
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-16 mb-12">
+                <div>
+                    <h3 class="text-white text-2xl font-bold mb-6 arabic-title">مرزوكة إكسبيريانس</h3>
+                    <p class="leading-relaxed">نحن متخصصون في تنظيم رحلات صحراوية متكاملة في مرزوكة، نجمع بين التقاليد المغربية الأصيلة وأعلى معايير الخدمة لنصنع لك ذكريات لا تُنسى.</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">اتصل بنا</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-phone text-orange-500 text-xl"></i>
+                            <a href="tel:+212618126225" class="hover:text-white transition">+212 618-126225</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-orange-500 text-xl"></i>
+                            <a href="mailto:ismailoutaleb30@gmail.com" class="hover:text-white transition">ismailoutaleb30@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 text-xl"></i>
+                            <span>مرزوكة، عرق الشبي، المغرب</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">تابع مغامراتنا</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-orange-600 hover:text-white transition">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-orange-600 hover:text-white transition">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-orange-600 hover:text-white transition">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-10 text-center">
+                <p>&copy; 2024 سياحة مرزوكة. جميع الحقوق محفوظة لـ إسماعيل أوتالب.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] px-4 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] p-10 max-w-sm w-full text-center scale-95 transition-transform duration-300 shadow-2xl" id="modalContent">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">تم إرسال الطلب!</h3>
+            <p class="text-gray-600 mb-8 text-lg">شكراً لاختياركم لنا. سيتواصل معكم فريقنا قريباً لتأكيد تفاصيل رحلتكم.</p>
+            <button onclick="closeModal()" class="w-full bg-orange-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-orange-700 transition">فهمت</button>
+        </div>
+    </div>
+
+    <script>
+        // Set date min to today
+        const dt = new Date().toISOString().split('T')[0];
+        document.getElementById('booking-date').setAttribute('min', dt);
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const links = document.getElementById('nav-links');
+        
+        btn.onclick = () => {
+            links.classList.toggle('hidden');
+            links.classList.toggle('mobile-nav-active');
+        };
+
+        function handleBooking(e) {
+            e.preventDefault();
+            const m = document.getElementById('successModal');
+            const c = document.getElementById('modalContent');
+            m.classList.replace('hidden', 'flex');
+            setTimeout(() => c.classList.replace('scale-95', 'scale-100'), 50);
+        }
+
+        function closeModal() {
+            const m = document.getElementById('successModal');
+            const c = document.getElementById('modalContent');
+            c.classList.replace('scale-100', 'scale-95');
+            setTimeout(() => m.classList.replace('flex', 'hidden'), 200);
+        }
+
+        window.addEventListener('scroll', () => {
+            const n = document.querySelector('nav');
+            if (window.scrollY > 40) {
+                n.classList.add('shadow-lg');
+            } else {
+                n.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
+
